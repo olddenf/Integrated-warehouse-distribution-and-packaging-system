@@ -8,7 +8,7 @@ from app.core.database import init_db
 app = FastAPI(
     title=settings.PROJECT_NAME,
     version=settings.VERSION,
-    description="SaaS仓配装一体化管理系统 API"
+    description="仓配装一体系统 API"
 )
 
 # 配置CORS

@@ -82,7 +82,7 @@ import { ref, onMounted } from 'vue';
 
 // 基本设置
 const basicSettings = ref({
-  system_name: '仓配装SaaS系统',
+  system_name: '仓配装一体系统',
   system_version: '1.0.0',
   system_description: '智能仓储配送安装管理系统'
 });

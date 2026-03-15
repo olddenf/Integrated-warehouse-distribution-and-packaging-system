@@ -36,7 +36,7 @@ class Settings(BaseSettings):
     LOG_LEVEL: str = "INFO"
     
     # 项目信息
-    PROJECT_NAME: str = "SaaS仓配装一体化管理系统"
+    PROJECT_NAME: str = "仓配装一体系统"
     VERSION: str = "1.0.0"
     
     class Config:

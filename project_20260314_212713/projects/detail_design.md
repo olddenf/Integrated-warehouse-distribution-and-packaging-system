@@ -1,7 +1,7 @@
-# SaaS仓配装一体化管理系统详细设计文档
+# 仓配装一体系统详细设计文档
 
 ## 文档信息
-- **项目名称**: SaaS仓配装一体化管理系统
+- **项目名称**: 仓配装一体系统
 - **文档版本**: v3.0 (Python详细设计版)
 - **创建日期**: 2026-03-12
 - **文档类型**: 详细设计说明书
@@ -2959,7 +2959,7 @@ SMS_SIGN_NAME=your-sign-name
 SMS_TEMPLATE_CODE=SMS_TEMPLATE_CODE
 
 # 应用配置
-APP_NAME=SaaS仓配装一体化管理系统
+APP_NAME=仓配装一体系统
 APP_VERSION=1.0.0
 DEBUG=False
 LOG_LEVEL=INFO
