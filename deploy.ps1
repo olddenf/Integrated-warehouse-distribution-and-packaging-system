@@ -1,10 +1,10 @@
 #!/usr/bin/env pwsh
 
-# 仓配装SaaS系统一键部署脚本
+# 仓配装一体系统一键部署脚本
 # 该脚本会自动安装Docker（如果未安装）并部署项目
 
 Write-Host "=====================================" -ForegroundColor Green
-Write-Host "仓配装SaaS系统一键部署脚本" -ForegroundColor Green
+Write-Host "仓配装一体系统一键部署脚本" -ForegroundColor Green
 Write-Host "=====================================" -ForegroundColor Green
 
 # 检查是否以管理员身份运行
@@ -79,7 +79,7 @@ if (Get-Command docker-compose -ErrorAction SilentlyContinue) {
 }
 
 # 部署项目
-Write-Host "开始部署仓配装SaaS系统..." -ForegroundColor Cyan
+Write-Host "开始部署仓配装一体系统..." -ForegroundColor Cyan
 
 # 检查当前目录是否包含docker-compose.yml文件
 if (-not (Test-Path "./docker-compose.yml")) {
