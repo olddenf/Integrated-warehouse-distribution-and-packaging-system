@@ -1,52 +1,38 @@
 # 仓配装一体系统部署指南
 
-## 项目结构
+## 快速部署
 
-```
-Saas_program/
-├── project_20260314_212713/
-│   └── projects/
-│       └── saas_warehouse/  # 后端服务
-├── saas-warehouse-web/      # Web管理后台
-├── saas-warehouse-h5/       # H5移动端
-├── docker-compose.yml       # Docker Compose配置
-└── DEPLOYMENT_GUIDE.md      # 部署指南
-```
-
-## 部署方式
-
-### 1. 本地开发环境
-
-#### 后端服务
+### 从GitHub克隆项目
 
 ```bash
-# 进入后端目录
-cd project_20260314_212713/projects/saas_warehouse
+# 克隆项目
+git clone https://github.com/olddenf/Integrated-warehouse-distribution-and-packaging-system.git
 
-# 安装依赖
-pip install -r requirements.txt
-
-# 初始化数据库
-python scripts/init_db.py
-
-# 创建管理员用户
-python scripts/create_admin.py
-
-# 启动服务
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+# 进入项目目录
+cd Integrated-warehouse-distribution-and-packaging-system
 ```
 
-#### Web管理后台
+### 使用Docker Compose一键部署
 
 ```bash
-# 进入Web目录
-cd saas-warehouse-web
+# 构建并启动所有服务
+docker-compose up -d --build
+```
 
-# 安装依赖
-npm install
+部署完成后，系统将通过以下地址访问：
 
-# 启动开发服务器
-npm run dev
+- Web管理后台: <http://localhost>
+- H5移动端: <http://localhost:8080>
+- 后端API: <http://localhost:8000>
+
+### 停止服务
+
+```bash
+# 停止所有服务
+docker-compose down
+
+# 停止服务并删除数据卷
+docker-compose down -v
 ```
 
 #### H5移动端

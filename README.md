@@ -39,20 +39,64 @@ Saas_program/
 
 ## 快速开始
 
-### 一键部署
+### 一键部署脚本
 
-使用Docker Compose一键部署整个系统：
+#### Windows系统
 
-```bash
-# 在项目根目录执行
+在PowerShell中执行以下命令：
+
+```powershell
+# 克隆并部署
+git clone https://github.com/olddenf/Integrated-warehouse-distribution-and-packaging-system.git
+cd Integrated-warehouse-distribution-and-packaging-system
 docker-compose up -d --build
 ```
+
+或者使用一键部署脚本：
+
+```powershell
+# 下载并运行一键部署脚本
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/olddenf/Integrated-warehouse-distribution-and-packaging-system/main/quick-deploy.ps1" -OutFile "quick-deploy.ps1"
+.\quick-deploy.ps1
+```
+
+#### Linux/Mac系统
+
+在终端中执行以下命令：
+
+```bash
+# 克隆并部署
+git clone https://github.com/olddenf/Integrated-warehouse-distribution-and-packaging-system.git
+cd Integrated-warehouse-distribution-and-packaging-system
+docker-compose up -d --build
+```
+
+或者使用一键部署脚本：
+
+```bash
+# 下载并运行一键部署脚本
+curl -O https://raw.githubusercontent.com/olddenf/Integrated-warehouse-distribution-and-packaging-system/main/quick-deploy.sh
+chmod +x quick-deploy.sh
+./quick-deploy.sh
+```
+
+### 访问系统
 
 部署完成后，系统将通过以下地址访问：
 
 - Web管理后台: <http://localhost>
 - H5移动端: <http://localhost:8080>
 - 后端API: <http://localhost:8000>
+
+### 停止服务
+
+```bash
+# 停止所有服务
+docker-compose down
+
+# 停止服务并删除数据卷
+docker-compose down -v
+```
 
 ### 本地开发
 

@@ -13,27 +13,26 @@ services:
       - ACCESS_TOKEN_EXPIRE_MINUTES=30
       - GAODE_API_KEY=your_gaode_api_key
     volumes:
-      - ./project_20260314_212713/projects/saas_warehouse:/app
+      - backend_data:/app/data
     restart: unless-stopped
 
   web:
-    image: nginx:alpine
+    build:
+      context: ./saas-warehouse-web
     ports:
       - "80:80"
-    volumes:
-      - ./saas-warehouse-web/dist:/usr/share/nginx/html
-      - ./saas-warehouse-web/nginx.conf:/etc/nginx/conf.d/default.conf
     depends_on:
       - backend
     restart: unless-stopped
 
   h5:
-    image: nginx:alpine
+    build:
+      context: ./saas-warehouse-h5
     ports:
-      - "8080:8080"
-    volumes:
-      - ./saas-warehouse-h5/dist:/usr/share/nginx/html/h5
-      - ./saas-warehouse-h5/nginx.conf:/etc/nginx/conf.d/default.conf
+      - "8080:80"
     depends_on:
       - backend
     restart: unless-stopped
+
+volumes:
+  backend_data:
