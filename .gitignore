@@ -1,0 +1,40 @@
+# 操作系统文件
+Thumbs.db
+.DS_Store
+
+# 编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 编译产物
+dist/
+build/
+*.pyc
+__pycache__/
+
+# 环境文件
+.env
+.env.local
+.env.*.local
+
+# 测试文件
+pytest_cache/
+*.db
+
+# 日志文件
+*.log
+
+# 依赖文件
+node_modules/
+*.egg-info/
+
+# 打包文件
+*.tar.gz
+*.zip
+
+# 临时文件
+tmp/
+temp/

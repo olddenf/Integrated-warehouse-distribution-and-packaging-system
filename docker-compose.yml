@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./project_20260314_212713/projects/saas_warehouse
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./saas_warehouse.db
+      - SECRET_KEY=your_secret_key
+      - ALGORITHM=HS256
+      - ACCESS_TOKEN_EXPIRE_MINUTES=30
+      - GAODE_API_KEY=your_gaode_api_key
+    volumes:
+      - ./project_20260314_212713/projects/saas_warehouse:/app
+    restart: unless-stopped
+
+  web:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./saas-warehouse-web/dist:/usr/share/nginx/html
+      - ./saas-warehouse-web/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  h5:
+    image: nginx:alpine
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./saas-warehouse-h5/dist:/usr/share/nginx/html/h5
+      - ./saas-warehouse-h5/nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - backend
+    restart: unless-stopped

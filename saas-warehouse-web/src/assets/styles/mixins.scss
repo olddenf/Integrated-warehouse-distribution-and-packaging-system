@@ -1,0 +1,184 @@
+// 样式混入
+
+// 清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// 文字溢出省略
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行文字溢出省略
+@mixin text-ellipsis-multiline($line: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+}
+
+// 居中
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 垂直居中
+@mixin flex-center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+// 水平居中
+@mixin flex-center-horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+// 两端对齐
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 固定定位
+@mixin fixed($top: null, $right: null, $bottom: null, $left: null) {
+  position: fixed;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// 绝对定位
+@mixin absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// 相对定位
+@mixin relative {
+  position: relative;
+}
+
+// 动画
+@mixin transition($property: all, $duration: $transition-normal, $timing-function: ease) {
+  transition: $property $duration $timing-function;
+}
+
+// 媒体查询
+@mixin responsive($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: $breakpoint-xs) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+// 按钮样式
+@mixin button-base {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: $border-radius-md;
+  transition: all $transition-fast ease;
+  &:hover {
+    opacity: 0.9;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+// 卡片样式
+@mixin card {
+  background-color: #fff;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-lg;
+}
+
+// 表单输入框样式
+@mixin input-base {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: $font-size-sm;
+  line-height: 1.5;
+  color: $text-color-primary;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-md;
+  transition: border-color $transition-fast ease-in-out, box-shadow $transition-fast ease-in-out;
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
+  }
+  &:disabled {
+    background-color: $bg-color-secondary;
+    cursor: not-allowed;
+  }
+}
+
+// 表格样式
+@mixin table-base {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid $border-color;
+  }
+  th {
+    font-weight: 600;
+    background-color: $bg-color-secondary;
+  }
+  tr {
+    &:hover {
+      background-color: $bg-color-secondary;
+    }
+  }
+}

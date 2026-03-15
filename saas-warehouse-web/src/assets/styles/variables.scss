@@ -1,0 +1,70 @@
+// 样式变量
+
+// 主题色
+$primary-color: #409EFF;
+$primary-color-hover: #66b1ff;
+$success-color: #67C23A;
+$warning-color: #E6A23C;
+$error-color: #F56C6C;
+$info-color: #909399;
+
+// 背景色
+$bg-color-page: #f5f7fa;
+$bg-color-secondary: #f0f2f5;
+$bg-color-tertiary: #e4e7ed;
+$bg-color-quaternary: #dcdfe6;
+
+// 文字颜色
+$text-color-primary: #303133;
+$text-color-secondary: #606266;
+$text-color-tertiary: #909399;
+$text-color-quaternary: #c0c4cc;
+
+// 边框颜色
+$border-color: #dcdfe6;
+$border-color-light: #ebeef5;
+$border-color-lighter: #f0f2f5;
+
+// 字体大小
+$font-size-xs: 12px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+
+// 间距
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 48px;
+
+// 圆角
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+$border-radius-xl: 12px;
+
+// 阴影
+$box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+$box-shadow-dark: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+// 布局
+$header-height: 60px;
+$sidebar-width: 220px;
+$sidebar-width-collapsed: 64px;
+$footer-height: 60px;
+
+// 动画
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;
+
+// 断点
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 992px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1920px;
